@@ -1,5 +1,5 @@
 class Api {
-    constructor(basePath, token) {
+    constructor(basePath) {
         this._basePath = basePath;
     }
 
