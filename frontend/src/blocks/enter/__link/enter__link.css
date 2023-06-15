@@ -1,0 +1,23 @@
+.enter__link {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 80px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.enter__link:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 420px) {
+    .enter__link {
+        margin-bottom: 40px;
+    }
+}
