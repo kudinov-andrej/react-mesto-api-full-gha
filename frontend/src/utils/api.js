@@ -89,7 +89,7 @@ class Api {
 }
 
 const api = new Api(
-    "https://api.mesta.nomoredomains.rocks/"
+    "https://api.mesta.nomoredomains.rocks"
 )
 
 export default api
