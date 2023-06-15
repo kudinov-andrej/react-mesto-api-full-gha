@@ -3,10 +3,10 @@ class Api {
         this._basePath = basePath;
     }
 
-    _getHeaders(token) {
+    _getHeaders() {
         return {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${localStorage.getItem('userToken')}`
         };
     }
 
