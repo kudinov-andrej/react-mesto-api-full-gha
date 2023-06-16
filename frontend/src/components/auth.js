@@ -1,4 +1,5 @@
-export const BASE_URL = 'https://api.mesta.nomoredomains.rocks';
+//export const BASE_URL = 'https://api.mesta.nomoredomains.rocks';
+export const BASE_URL = 'http://localhost:3000';
 
 const makeRequest = (url, method, body, token) => {
 
@@ -44,5 +45,3 @@ export const authorize = (password, email) => {
 export const getUserData = (token) => {
     return makeRequest("/users/me", "GET", null, token);
 }
-
-

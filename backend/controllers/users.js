@@ -141,8 +141,8 @@ const login = (req, res, next) => {
     // eslint-disable-next-line consistent-return
     .then((matched) => {
       if (!matched) { return Promise.reject(new Unauthorized('Неправильные почта или пароль')); }
-      const userToken = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
-      res.send({ userToken });
+      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      res.send({ token });
     })
     .catch((err) => next(err));
 };

@@ -4,9 +4,10 @@ class Api {
     }
 
     _getHeaders() {
+        const token = localStorage.getItem('jwt');
         return {
             "Content-Type": "application/json",
-            authorization: `Bearer ${localStorage.getItem('token')}`
+            authorization: `Bearer ${token}`
         };
     }
 
@@ -89,7 +90,12 @@ class Api {
 }
 
 const api = new Api(
-    "https://api.mesta.nomoredomains.rocks"
+    "http://localhost:3000",
 )
 
 export default api
+
+/*
+const api = new Api(
+    // "https://api.mesta.nomoredomains.rocks"
+) */
