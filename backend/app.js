@@ -8,9 +8,13 @@ const rateLimit = require('express-rate-limit');
 const router = require('./routes');
 const ErrorHandler = require('./midlevare/ErrorHandler');
 
+const cors = require('cors');
+
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 const app = express();
+
+app.use(cors());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // за 15 минут
