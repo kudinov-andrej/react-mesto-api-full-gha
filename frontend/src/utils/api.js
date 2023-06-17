@@ -73,7 +73,7 @@ class Api {
         return fetch(`${this._basePath}/cards/${id}/likes`, {
             method: 'PUT',
             headers: this._getHeaders(),
-            // body: JSON.stringify(likes),
+            //  body: JSON.stringify(likes),
         }).then(this._getJson);
 
     }
@@ -82,7 +82,7 @@ class Api {
         return fetch(`${this._basePath}/cards/${id}/likes`, {
             method: 'DELETE',
             headers: this._getHeaders(),
-
+            //body: JSON.stringify(likes),
         })
             .then(this._getJson);
     }

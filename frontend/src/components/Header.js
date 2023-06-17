@@ -30,7 +30,7 @@ function Header({ logOut, userData }) {
       <>
         <button type='button' className={loggedOut ? 'header__menu' : isOpenMenu ? 'header__menu_off' : 'header__menu'} onClick={handleMenuClick} />
         <div className={loggedOut ? 'header__link-conteiner' : isOpenMenu ? 'header__link-conteiner-activ' : 'header__link-conteiner'}>
-          <p className='header__email'>{userData.data?.email || ''}</p>
+          <p className='header__email'>{userData?.email || ''}</p>
           <NavLink className='header__link' to="/sign-up" onClick={closeMenuPage}>Выйти</NavLink>
         </div>
       </>
