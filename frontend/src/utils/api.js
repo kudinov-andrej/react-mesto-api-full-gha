@@ -7,6 +7,7 @@ class Api {
         const token = localStorage.getItem('jwt');
         return {
             "Content-Type": "application/json",
+            "Cache-Control": "no-cache",
             authorization: `Bearer ${token}`
         };
     }

@@ -50,9 +50,19 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (isloggedIn) {
+      api.getCurrentUser()
+        .then((userData) => {
+          setCurrentUser(userData);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, [isloggedIn]);
 
   useEffect(() => {
-    // const token = localStorage.getItem('jwt');
     if (!token) {
       return
     }
