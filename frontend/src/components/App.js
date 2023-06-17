@@ -113,6 +113,10 @@ function App() {
         setIsloggedIn(true);
       })
       .catch((err) => {
+        setIsGoodImg(false);
+        setIsGoodText(false);
+        setIsGoodAlt(false);
+        setIsInfoToLipPopupOpen(true);
         console.log(err);
       })
   }
