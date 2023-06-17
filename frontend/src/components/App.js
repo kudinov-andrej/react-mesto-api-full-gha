@@ -52,9 +52,12 @@ function App() {
 
   useEffect(() => {
     if (isloggedIn) {
-      api.getCurrentUser()
+      api
+        .getCurrentUser()
+        .getCards()
         .then((userData) => {
           setCurrentUser(userData);
+          setCards(cards);
         })
         .catch((err) => {
           console.error(err);
