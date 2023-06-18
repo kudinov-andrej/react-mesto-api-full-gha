@@ -7,11 +7,13 @@ const BedRequest = require('../utils/errors/BedRequest'); // 400
 const ConflictingRequest = require('../utils/errors/ConflictingRequest'); // 409
 const DocumentNotFoundError = require('../utils/errors/DocumentNotFoundError'); // 404
 const Unauthorized = require('../utils/errors/Unauthorized'); // 401
-
+const JWT_SECRET = require('../config');
+const NODE_ENV = require('../config');
 const {
   HTTP_STATUS_OK,
   HTTP_STATUS_CREATED,
 } = http2.constants;
+
 
 const getUserById = (req, res, next) => {
   usersModel
@@ -141,7 +143,7 @@ const login = (req, res, next) => {
     // eslint-disable-next-line consistent-return
     .then((matched) => {
       if (!matched) { return Promise.reject(new Unauthorized('Неправильные почта или пароль')); }
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, process.env.NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       res.send({ token });
     })
     .catch((err) => next(err));
