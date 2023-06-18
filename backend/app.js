@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const {
@@ -8,7 +9,6 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const router = require('./routes');
 const ErrorHandler = require('./midlevare/ErrorHandler');
-const cors = require('cors');
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
@@ -33,6 +33,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 app.use(router);
+app.use(errorLogger);
 app.use(errors());
 app.use(ErrorHandler);
 

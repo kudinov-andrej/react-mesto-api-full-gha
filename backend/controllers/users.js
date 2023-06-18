@@ -8,12 +8,11 @@ const ConflictingRequest = require('../utils/errors/ConflictingRequest'); // 409
 const DocumentNotFoundError = require('../utils/errors/DocumentNotFoundError'); // 404
 const Unauthorized = require('../utils/errors/Unauthorized'); // 401
 const JWT_SECRET = require('../config');
-const NODE_ENV = require('../config');
+
 const {
   HTTP_STATUS_OK,
   HTTP_STATUS_CREATED,
 } = http2.constants;
-
 
 const getUserById = (req, res, next) => {
   usersModel
