@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.44.29
 
-Frontend https://...
+Frontend https://mesta.nomoredomains.rocks
 
-Backend https://...
+Backend https://api.mesta.nomoredomains.rocks
