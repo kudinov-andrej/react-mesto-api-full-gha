@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.44.29
+IP-адрес <158.160.44.29>
 
 Frontend https://mesta.nomoredomains.rocks
 
