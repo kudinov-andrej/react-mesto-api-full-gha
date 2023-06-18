@@ -8,10 +8,9 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const router = require('./routes');
 const ErrorHandler = require('./midlevare/ErrorHandler');
-const DB_ADRESS = require('./config');
 const cors = require('cors');
 
-mongoose.connect(DB_ADRESS);
+mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 const app = express();
 
