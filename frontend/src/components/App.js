@@ -40,7 +40,6 @@ function App() {
   const [isGoodText, setIsGoodText] = useState(false)
   const [isGoodAlt, setIsGoodAlt] = useState(false)
 
-
   useEffect(() => {
     const jwt = localStorage.getItem("jwt")
     setToken(jwt)
@@ -99,7 +98,6 @@ function App() {
       })
   }
 
-
   const loginUser = ({ password, email }) => {
     auth
       .authorize(password, email)
@@ -128,7 +126,6 @@ function App() {
     navigate("/sign-up")
 
   }
-
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true)
